@@ -1197,11 +1197,11 @@ a {
   }
 }
 
-.details__text p {
+.details__text:not(:last-child) p {
   margin-bottom: 40px;
 }
 @media (max-width: 600px) {
-  .details__text p {
+  .details__text:not(:last-child) p {
     margin-bottom: 15px;
   }
 }

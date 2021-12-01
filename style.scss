@@ -813,7 +813,7 @@ a {
         text-align: center;
     }
 }
-.details__text p {
+.details__text:not(:last-child) p {
    margin-bottom: 40px; 
 
    @include mobile5s {
