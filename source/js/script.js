@@ -23,40 +23,40 @@ burger.addEventListener('click', function(){
 })
 
 
-// // Scroll Animation
+// Scroll Animation
 
-// const animItems = document.querySelectorAll(`._animated`)
-// if (animItems.length > 0) {
-//     window.addEventListener(`scroll`, animOnScroll)
+const animItems = document.querySelectorAll(`._animated`)
+if (animItems.length > 0) {
+    window.addEventListener(`scroll`, animOnScroll)
 
-//     function animOnScroll() {
-//         for (let index = 0; index < animItems.length; index++) {
-//             const animItem = animItems[index]
-//             const animItemHeight = animItem.offsetHeight
-//             const animItemOffSet = offset(animItem).top
-//             const animStart = 4
-//             let animItemPoint = window.innerHeight - animItemHeight / animStart
-//             if (animItemHeight > window.innerHeight) {
-//                 animItemPoint = window.innerHeight - window.innerHeight / animStart
-//             }
-//             if ((window.scrollY > animItemOffSet - animItemPoint) && window.scrollY < (animItemOffSet + animItemHeight)) {
-//                 animItem.classList.add(`_active`)
-//             } else {
-//                 if (!(animItem.classList.contains(`_once-animated`))) {
-//                     animItem.classList.remove(`_active`)
-//                 }
-//             }
-//         }
-//     }
+    function animOnScroll() {
+        for (let index = 0; index < animItems.length; index++) {
+            const animItem = animItems[index]
+            const animItemHeight = animItem.offsetHeight
+            const animItemOffSet = offset(animItem).top
+            const animStart = 4
+            let animItemPoint = window.innerHeight - animItemHeight / animStart
+            if (animItemHeight > window.innerHeight) {
+                animItemPoint = window.innerHeight - window.innerHeight / animStart
+            }
+            if ((window.scrollY > animItemOffSet - animItemPoint) && window.scrollY < (animItemOffSet + animItemHeight)) {
+                animItem.classList.add(`_active`)
+            } else {
+                if (!(animItem.classList.contains(`_once-animated`))) {
+                    animItem.classList.remove(`_active`)
+                }
+            }
+        }
+    }
 
-//     function offset(el) {
-//         const rect = el.getBoundingClientRect()
-//         let scrollLeft = window.scrollY || document.documentElement.scrollLeft
-//         let scrollTop = window.scrollY || document.documentElement.scrollTop
-//         return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
-//     }
+    function offset(el) {
+        const rect = el.getBoundingClientRect()
+        let scrollLeft = window.scrollY || document.documentElement.scrollLeft
+        let scrollTop = window.scrollY || document.documentElement.scrollTop
+        return {top: rect.top + scrollTop, left: rect.left + scrollLeft}
+    }
 
-//     setTimeout(() => {
-//         animOnScroll()
-//     }, 300)
-// }
+    setTimeout(() => {
+        animOnScroll()
+    }, 300)
+}

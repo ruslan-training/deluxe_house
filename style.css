@@ -388,6 +388,9 @@ a {
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 22px;
+  opacity: 0;
+  -webkit-transform: translateY(150%);
+          transform: translateY(150%);
 }
 @media (max-width: 899px) {
   .content__title {
@@ -402,6 +405,14 @@ a {
   }
 }
 
+.content__title._active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+}
+
 .content__text {
   max-width: 510px;
   width: 100%;
@@ -411,6 +422,9 @@ a {
   color: #FFFFFF;
   margin-bottom: 15px;
   text-align: center;
+  opacity: 0;
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
 }
 @media (max-width: 600px) {
   .content__text {
@@ -419,15 +433,38 @@ a {
   }
 }
 
+.content__text._active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
 .btn {
   padding: 23px 50px;
   background-color: #fff;
   border-radius: 50px;
+  opacity: 0;
+  -webkit-transform: translateY(120%);
+          transform: translateY(120%);
 }
 @media (max-width: 899px) {
   .btn {
     padding: 1.597vw 3.472vw;
   }
+}
+
+.content__btn._active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+  -webkit-transition-delay: 1.3s;
+          transition-delay: 1.3s;
 }
 
 .content__abs-img {
@@ -1242,6 +1279,19 @@ a {
   width: 100%;
   padding: 40px 20px;
   border-radius: 20px;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+@media (min-width: 1441px) {
+  .service {
+    max-width: 400px;
+    width: 100%;
+  }
 }
 @media (max-width: 1200px) {
   .service {
@@ -1257,6 +1307,34 @@ a {
         -ms-flex: 1 1 50%;
             flex: 1 1 50%;
   }
+}
+
+.service._active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
+}
+
+.service._active:nth-child(1) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.service._active:nth-child(2) {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+.service._active:nth-child(3) {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+
+.service._active:nth-child(4) {
+  -webkit-transition-delay: 1.2s;
+          transition-delay: 1.2s;
 }
 
 .service:not(:last-child) {
@@ -1413,10 +1491,10 @@ a {
 
 .collection__images {
   position: relative;
-  max-width: 32.639vw;
+  max-width: 28.639vw;
   width: 100%;
 }
-@media (min-width: 1440px) {
+@media (min-width: 1441px) {
   .collection__images {
     max-width: 470px;
   }
@@ -1534,8 +1612,8 @@ a {
 }
 
 .collection__images:hover .collection__img {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
   overflow: hidden;
   -webkit-transition: -webkit-transform 0.8s linear;
   transition: -webkit-transform 0.8s linear;
@@ -1877,6 +1955,11 @@ a {
   max-width: 308px;
   width: 100%;
   margin-bottom: 80px;
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+          transform: scale(0.5);
+  -webkit-transition: all 0.8s linear;
+  transition: all 0.8s linear;
 }
 @media (max-width: 1200px) {
   .step {
@@ -1891,6 +1974,44 @@ a {
   .step {
     margin-bottom: 30px;
   }
+}
+
+.step._active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 1.2s linear;
+  transition: all 1.2s linear;
+}
+
+.step._active:nth-child(1) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.step._active:nth-child(2) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.step._active:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.step._active:nth-child(4) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.step._active:nth-child(5) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
+}
+
+.step._active:nth-child(6) {
+  -webkit-transition-delay: 0.6s;
+          transition-delay: 0.6s;
 }
 
 .step__icon {
