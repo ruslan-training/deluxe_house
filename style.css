@@ -96,8 +96,6 @@ a {
   -ms-grid-rows: 79px 1fr;
   grid-template-rows: 79px 1fr;
       grid-template-areas: "header header" "side content";
-  height: 100vh;
-  overflow: hidden;
 }
 @media (max-width: 950px) {
   .grid-wrapper {
@@ -369,6 +367,7 @@ a {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   height: 683px;
+  background: url(img/bg.png) center/cover no-repeat;
 }
 @media (max-width: 899px) {
   .content {
@@ -381,17 +380,7 @@ a {
   }
 }
 
-.content__parallax-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(img/bg.png) center/cover no-repeat;
-}
-
 .content__title {
-  position: relative;
   font-family: "Garamond";
   font-weight: 700;
   font-size: 50px;
@@ -399,7 +388,6 @@ a {
   text-align: center;
   color: #FFFFFF;
   margin-bottom: 22px;
-  z-index: 1;
 }
 @media (max-width: 899px) {
   .content__title {
@@ -423,8 +411,6 @@ a {
   color: #FFFFFF;
   margin-bottom: 15px;
   text-align: center;
-  position: relative;
-  z-index: 1;
 }
 @media (max-width: 600px) {
   .content__text {
@@ -437,8 +423,6 @@ a {
   padding: 23px 50px;
   background-color: #fff;
   border-radius: 50px;
-  position: relative;
-  z-index: 1;
 }
 @media (max-width: 899px) {
   .btn {

@@ -41,8 +41,6 @@ a {
     grid-template-rows: 79px 1fr;
     grid-template-areas: "header header"
                          "side content";
-    height: 100vh;
-    overflow: hidden;
 
     @media (max-width: 950px)  {
         grid-template-columns: 50px 1fr;
@@ -214,6 +212,7 @@ a {
     text-align: center;
     flex: 1 1 auto;
     height: 683px;
+    background: url(img/bg.png) center / cover no-repeat;
     
     @include mobile {
         height: 550px;
@@ -222,16 +221,7 @@ a {
         height: 450px;
     }
 }
-.content__parallax-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(img/bg.png) center / cover no-repeat;
-}
 .content__title {
-    position: relative;
     font-family: "Garamond";
     font-weight: 700;
     font-size: 50px;
@@ -239,8 +229,7 @@ a {
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 22px;
-    z-index: 1;
-
+   
     @include mobile {
         font-size: 5.556vw;
         line-height: 6vw;
@@ -259,8 +248,6 @@ a {
     color: #FFFFFF;
     margin-bottom: 15px;
     text-align: center;
-    position: relative;
-    z-index: 1;
 
     @include mobile5s {
         font-size: 16px;
@@ -271,8 +258,6 @@ a {
     padding: 23px 50px;
     background-color: #fff;
     border-radius: 50px;
-    position: relative;
-    z-index: 1;
     @include mobile {
         padding: 1.597vw 3.472vw;
     }
