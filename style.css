@@ -1163,8 +1163,7 @@ a {
   font-size: calc(12px + 4 * ((100vw - 320px) / 1120));
   line-height: calc(20px + 6 * ((100vw - 320px) / 1120));
   color: #404040;
-  padding-top: calc(50px + 310 * ((100vw - 320px) / 1120));
-  padding-bottom: calc(160px + 100 * ((100vw - 320px) / 1120));
+  padding: 20vw 0 10vw;
 }
 @media (min-width: 1920px) {
   .details__text {
@@ -1198,6 +1197,7 @@ a {
 }
 
 .details__text:not(:last-child) p {
+  display: block;
   margin-bottom: 40px;
 }
 @media (max-width: 600px) {

@@ -789,8 +789,7 @@ a {
     @include adaptiv-value("font-size", 16, 12, 0);
     @include adaptiv-value("line-height", 26, 20, 0);
     color: #404040;
-    @include adaptiv-value("padding-top", 360, 50, 0);
-    @include adaptiv-value("padding-bottom", 260, 160, 0);
+    padding: 20vw 0 10vw;
     
     @media (min-width: 1920px) {
         padding-top: 110px;
@@ -814,7 +813,8 @@ a {
     }
 }
 .details__text:not(:last-child) p {
-   margin-bottom: 40px; 
+    display: block;
+    margin-bottom: 40px; 
 
    @include mobile5s {
        margin-bottom: 15px;
