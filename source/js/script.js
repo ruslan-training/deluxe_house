@@ -1,15 +1,12 @@
-// // HEADER
-// window.onscroll = function showHeader() {
-//     let header = document.querySelector('.header');
-//     if(window.scrollY > 500) {
-//       header.classList.add('menu-fixed');
-//     } else {
-//       header.classList.remove('menu-fixed');
-//     }
-//   }
+// Parallax fade
+// const contentBg = document.getElementById('bg')
+// window.addEventListener('scroll', function(){
+//     contentBg.style.opacity = 1 - +window.pageYOffset/750+''
+//     contentBg.style.top = +window.pageYOffset+'px'
+//     contentBg.style.backgroundPositionY = - +window.pageYOffset/2+'px'
+// })
 
-
-// // Burger
+// Burger
 
 let burger = document.querySelector('.burger'),
     adaptivemenu = document.querySelector('.nav'),
@@ -25,65 +22,7 @@ burger.addEventListener('click', function(){
     }
 })
 
-// let productBoxes = document.querySelectorAll('.product-box'),
-//     productBoxBtns = document.querySelector('.btn'),
-//     productBoxIcons = document.querySelector('.product-box__icon');
 
-//     for (let productBox of productBoxes) {
-//         productBox.addEventListener('mouseenter', function(){
-//             productBox.classList.add('_active');
-//         })
-//         productBox.addEventListener('mouseleave', function(){
-//             productBox.classList.remove('_active');
-//         }) 
-//     }
-
-// //  Slider testimonials
-
-// $('.testimonials-slider-wrapper').slick({
-//     slidesToShow: 2,
-//     slidesToScroll: 2,
-//     speed: 1500,
-//     autoplay: 1,
-//     Infinity: true,
-//     pauseOnHover: true,
-//     waitForAnimate: false,
-
-//     responsive: [{
-//         breakpoint: 600,
-//         settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//     }
-// }]
-// });
-
-// $('.shop__products').slick({
-//     slidesToShow: 4,
-//     slidesToScroll: 4,
-//     speed: 1500,
-//     autoplay: 0,
-//     Infinity: true,
-//     waitForAnimate: true,
-
-//     responsive: [   
-//     {
-//         breakpoint: 900,
-//         settings: {
-//         slidesToShow: 2,
-//         slidesToScroll: 1
-//     },
-//         breakpoint: 600,
-//         settings: {
-//         slidesToShow: 1,
-//         slidesToScroll: 1
-//         }
-//     }
-// ]
-
-// });
-
-   
 // // Scroll Animation
 
 // const animItems = document.querySelectorAll(`._animated`)

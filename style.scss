@@ -41,10 +41,16 @@ a {
     grid-template-rows: 79px 1fr;
     grid-template-areas: "header header"
                          "side content";
+    height: 100vh;
+    overflow: hidden;
 
     @media (max-width: 950px)  {
         grid-template-columns: 50px 1fr;
         grid-template-rows: 67px 1fr;
+    }
+
+    @include mobile5s {
+        grid-template-columns: 0 1fr;
     }
 }
 // HEADER   
@@ -103,6 +109,10 @@ a {
 // End Burger
 .logo {
     max-width: 10.417vw;
+    
+    @include mobile5s {
+        max-width: 25vw;
+    }
 }
 .logo img {
     width: 100%;
@@ -175,6 +185,11 @@ a {
 .header__contacts:hover {
     filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
 }
+.contacts__img-link{
+    @include mobile5s {
+        display: none;
+    }
+}
 .contacts__img {
     margin-right: 10px;
     width: 14px;
@@ -199,12 +214,24 @@ a {
     text-align: center;
     flex: 1 1 auto;
     height: 683px;
-
+    
     @include mobile {
         height: 550px;
     }
+    @include mobile5s {
+        height: 450px;
+    }
+}
+.content__parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(img/bg.png) center / cover no-repeat;
 }
 .content__title {
+    position: relative;
     font-family: "Garamond";
     font-weight: 700;
     font-size: 50px;
@@ -212,10 +239,15 @@ a {
     text-align: center;
     color: #FFFFFF;
     margin-bottom: 22px;
+    z-index: 1;
 
     @include mobile {
         font-size: 5.556vw;
         line-height: 6vw;
+    }
+    @include mobile5s {
+        font-size: 24px;
+        line-height: 35px;
     }
 }
 .content__text {
@@ -227,6 +259,57 @@ a {
     color: #FFFFFF;
     margin-bottom: 15px;
     text-align: center;
+    position: relative;
+    z-index: 1;
+
+    @include mobile5s {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+.btn {
+    padding: 23px 50px;
+    background-color: #fff;
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+    @include mobile {
+        padding: 1.597vw 3.472vw;
+    }
+}
+.content__abs-img {
+    position: absolute;
+    right: 0;
+    bottom: -6%;
+    max-width: 31.250vw;
+    width: 100%;
+    z-index: 2;
+}
+.content__abs-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content__abs-logo {
+    max-width: 10.139vw;
+    width: 100%;
+    position: absolute;
+    top: -1.375vw;
+    left: -1.861vw;
+    @include desktop {
+        max-width: 7vw;
+    }
+    @include mobile5s {
+        display: none;
+    }
+}
+.content__abs-logo:hover {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
+}
+.content__abs-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 .side {
     grid-area: side;
@@ -244,6 +327,10 @@ a {
     }
     @media (max-width:900px) {
         padding: 0 10px;
+    }
+
+    @include mobile5s {
+        display: none;
     }
 }
 .side__title {
@@ -286,48 +373,7 @@ a {
 .side__item:hover {
     filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
 }
-.content {
-    background: url(img/bg.png) center / cover no-repeat;
-}
-.btn {
-    padding: 23px 50px;
-    background-color: #fff;
-    border-radius: 50px;
-    @include mobile {
-        padding: 1.597vw 3.472vw;
-    }
-}
-.content__abs-img {
-    position: absolute;
-    right: 0;
-    bottom: -6%;
-    max-width: 31.250vw;
-    width: 100%;
-    z-index: 2;
-}
-.content__abs-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.content__abs-logo {
-    max-width: 10.139vw;
-    width: 100%;
-    position: absolute;
-    top: -1.875vw;
-    left: -1.861vw;
-    @include desktop {
-        max-width: 7vw;
-    }
-}
-.content__abs-logo:hover {
-    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
-}
-.content__abs-logo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+
 
 // PROJECTS
 
@@ -344,6 +390,13 @@ a {
     text-align: center;
     padding: 80px 0 40px;
     border-bottom: 1px solid #E1DECE;
+
+    @include mobile {
+        font-size: 8.444vw;
+    }
+    @include mobile5s {
+        padding: 40px 0 20px;
+    }
 }
 .gallery {
     display: grid;
@@ -396,6 +449,15 @@ a {
             font-size: 16px;
             padding-bottom: 15px;
         }
+
+        @include mobile5s {
+            font-size: 2.667vw;
+        }
+        @media (max-width:370px) {
+            content: 'Смотреть';
+            font-size: 3.667vw;
+            padding-bottom: 5px;
+        }
     }
 }
 @keyframes darken {
@@ -441,6 +503,9 @@ a {
     @include mobile {
         margin-bottom: 16.667vw;
     }
+    @include mobile5s {
+        margin-bottom: 10.667vw;
+    }
 }
 .projects__button {
     font-family: 'Garamond';
@@ -478,6 +543,7 @@ a {
 
     @include mobile {
         font-size: 4.444vw;
+        line-height: 6vw;
     }
 }
 .projects__abs-img._left {
@@ -514,10 +580,26 @@ a {
     display: flex;
     justify-content: space-between;
     padding-top: 35px;
+
+    @include mobile {
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    @include mobile5s {
+        align-items: stretch;
+    }
 }
 .slide__img {
-    max-width: 517px;
+    max-width: 35.903vw;
     width: 100%;
+
+    @include mobile {
+        max-width: 589px;
+        margin-bottom: 20px;
+    }
+
 }
 .slide__img img{
     width: 100%;
@@ -527,12 +609,25 @@ a {
 }
 .text-block {
     padding-left: 40px;
+
+    @include tablet {
+        padding-left: 20px;
+    }
+    
+    @include mobile {
+        flex: 1 1 100%;
+        padding-left: 0;
+    }
 }
 .text-block__paragraph {
     max-width: 589px;
     width: 100%;
     @include adaptiv-value("font-size", 16, 12, 0);
     @include adaptiv-value("line-height", 26, 20, 0);
+
+    @include mobile5s {
+        display: none;
+    }
 }
 .text-block__paragraph:not(:last-child) {
     margin-bottom: 30px;
@@ -557,6 +652,10 @@ a {
     transform: rotate(-180deg);
     writing-mode: vertical-lr;
     overflow: hidden;
+    @include mobile5s {
+        font-size: 2vw;
+        line-height: normal;
+    }
 }
 .achivment-number {
     @include adaptiv-value("font-size", 45, 32, 0);
@@ -564,20 +663,27 @@ a {
     text-transform: uppercase;
     color: #E1DECE;
     margin: 0 5px;
+
+    @include mobile5s {
+        font-size: 6vw;
+        line-height: normal;
+        margin: 0 0.5vw;
+    }
 }
 .benefit {
     @include adaptiv-value("font-size", 12, 10, 0);
     @include adaptiv-value("line-height", 14, 12, 0);
     text-transform: uppercase;
+
+    @include mobile5s {
+        font-size: 2vw;
+        line-height: normal;
+    }
 }
 .slider-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.slider-nav__mission {
-    display: flex;
-    align-items: center;
 }
 .mission-text {
     font-family: 'Segoe';
@@ -587,20 +693,13 @@ a {
     color: #E1DECE;
     margin-right: 50px;
 }
-.slider-button {
-    background: url(img/arrow.svg) center no-repeat;
-    background-color: #E1DECE;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-}
-.next {
-    margin-left: 15px;
-    transform: rotate(-180deg);
-}
 .slider .projects__buttons {
     padding: 100px 0;
     margin-bottom: 0;
+
+    @include mobile5s {
+        padding: 30px 0;
+    }
 }
 .details {
     position: relative;
@@ -608,15 +707,15 @@ a {
     &:after {
         content: '';
         position: absolute;
-        top: 0;
+        top: -1px;
         left: 0;
         width: 100%;
-        height: 500px;
+        height: 300px;
         background-color: $main;
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 75%);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 50%);
 
-        @include tablet {
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 30%);
+        @include mobile5s {
+            height: 200px;
         }
     }
 }
@@ -631,6 +730,10 @@ a {
     left: 0;
     max-width: 72.917vw;
     z-index: 2;
+
+    @include mobile5s {
+        display: none;
+    }
 }
 .details__abs-img img {
     width: 100%;
@@ -659,6 +762,12 @@ a {
     @include mobile {
         max-width: 350px;
         font-size: 20px;
+    }
+
+    @include mobile5s {
+        padding-top: 150px;
+        max-width: 100%;
+        text-align: center;
     }
 }
 .details__title span {
@@ -689,9 +798,18 @@ a {
         font-size: 16px;
         padding-bottom: 50px;
     }
+    @include mobile5s {
+        padding-top: 50px;
+        max-width: 100%;
+        text-align: center;
+    }
 }
 .details__text p {
    margin-bottom: 40px; 
+
+   @include mobile5s {
+       margin-bottom: 15px;
+   }
 }
 .details__text span {
     font-size: 24px;
@@ -700,6 +818,13 @@ a {
 
     @include mobile {
         font-size: 18px;
+    }
+}
+
+// slider 
+.swiper-button-prev, .swiper-button-next {
+    &:after, &:before {
+        display: none;
     }
 }
 // Services
@@ -712,16 +837,20 @@ a {
         bottom: -10px;
         right: 0;
         width: 80%;
-        height: 500px;
+        height: 300px;
         background-color: $main;
-        clip-path: polygon(100% 40%, 0% 100%, 100% 99%);
+        clip-path: polygon(100% 40%, 0% 100%, 100% 100%);
         @include tablet {
-            clip-path: polygon(100% 70%, 0% 100%, 100% 100%);
+            clip-path: polygon(100% 50%, 0% 100%, 100% 100%);
+        }
+        @include mobile5s {       
+            height: 200px;
         }
     }
 }
 .services-body {
     display: flex;
+    justify-content: center;
 
     @include mobile {
         flex-wrap: wrap;
@@ -732,26 +861,40 @@ a {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 22.22vw;
+    max-width: 300px;
     width: 100%;
     padding: 40px 20px;
     border-radius: 20px;
 
     @include tablet {
         padding: 20px 10px;
+        max-width: 22vw;
     }
 
     @include mobile {
-        padding: 7px;
+        max-width: 33vw;
+        margin-bottom: 10px;
+        flex: 1 1 50%;
     }
 }
 .service:not(:last-child) {
     @include adaptiv-value("margin-right", 30, 10, 0);
 
     @include mobile {
-        margin-right: 10px;
+        margin-right: 0;
     }
 }
+.service:first-child {
+    @include mobile {
+        margin-right: 10px;
+    }
+   
+}
+.service:last-child {
+    @include mobile {
+        margin-left: 10px;
+    }
+}   
 .service__icon img {
     width: 100%;
     height: 100%;
@@ -768,7 +911,10 @@ a {
 
     @include mobile {
         margin-bottom: 15px;
-        max-width: 6.665vw;
+        max-width: 7.665vw;
+    }
+    @include mobile5s {
+        max-width: 12vw;
     }
 }
 .service__title {
@@ -783,10 +929,13 @@ a {
         font-size: 1.4vw;
     }
     @include mobile {
-        max-width: 150px;
         font-size: 1.7vw;
         line-height: 2vw;
         margin-bottom: 0;
+    }  
+    @include mobile5s {
+        font-size: 2.1vw;
+        line-height: 3.5vw;
     }
 }
 .service__text {
@@ -809,17 +958,18 @@ a {
     position: relative;
     background-color: $main;
     &:after {
-        content: '';
+        content: "";
         position: absolute;
-        bottom: -419px;
+        bottom: -199px;
         left: 0;
         width: 100%;
-        height: 420px;
+        height: 200px;
         background-color: $main;
-
-        @include mobile {
-            bottom: -268px;
-            height: 270px;
+        clip-path: polygon(100% 0%, 0% 100%, 0% 0%);
+        z-index: 1;
+        @include mobile5s {
+            height: 100px;
+            bottom: -99px;
         }
     }
 }
@@ -828,6 +978,17 @@ a {
     align-items: center;
     justify-content: space-between;
     @include adaptiv-value("margin-bottom", 150, 75, 0);
+
+    @include mobile5s {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+}
+.collection-body {
+    @include mobile5s {
+        padding: 20px 0;
+    }
 }
 .collection:last-child {
     margin-bottom: 0;
@@ -836,9 +997,15 @@ a {
     position: relative; 
     max-width: 32.639vw;
     width: 100%;
+    
 
     @media (min-width:1440px) {
         max-width: 470px;
+    }
+
+    @include mobile5s {
+        margin-bottom: 10px;
+        max-width: 60vw;
     }
 }
 .collection._right-box  .collection__abs-img {
@@ -846,12 +1013,29 @@ a {
     right: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    opacity: 1;
 }
 .collection._left-box .collection__abs-img {
     position: absolute;
     right: -50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    opacity: 1;
+}
+.collection .collection__images {
+    @include mobile5s {
+        order: 1;
+    }    
+}
+.collection .collection__text-box {
+    @include mobile5s {
+        order: 2;
+        text-align: center;
+        margin-bottom: 20px;
+    } 
+}
+.collection__img {
+    transition: transform .8s linear;
 }
 .collection__img img {
     width: 100%;
@@ -861,6 +1045,13 @@ a {
 }
 .collection__abs-img {
     max-width: 17.222vw;
+    opacity: 1;
+    transition: all .6s linear;
+
+    @include mobile5s {
+        display: none;
+
+    }
 }
 .collection__abs-img img {
     width: 100%;
@@ -876,19 +1067,41 @@ a {
     }
 }
 .collection__category {
+    display: block;
     font-size: 10px;
     line-height: 26px;
     text-transform: uppercase;
     color: #6E6E6E;
     margin-bottom: 18px;
+    transition: all .3s linear;    
+
+    @include mobile5s {
+        margin-bottom: 15px;
+        line-height: 12px;
+    }
+}
+.collection__category:hover, .collection__title:hover {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
+    transition: all .3s linear;
+}
+.collection__images:hover .collection__img {
+    transform: scale(1.1);
+    overflow: hidden;
+    transition: transform .8s linear;
+}
+.collection__images:hover .collection__abs-img {
+    opacity: 0;
+    transition: all .6s linear;
 }
 .collection__title {
+    display: block;
     font-family: 'Garamond';
     font-weight: 700;
     @include adaptiv-value("font-size", 40, 18, 0);
     @include adaptiv-value("line-height", 46, 24, 0);
     color: #E1DECE;
     margin-bottom: 30px;
+    transition: all .3s linear;
 
     @include mobile {
         br {
@@ -919,14 +1132,23 @@ a {
 // USefull
 .usefull {
     position: relative;
-    background: url(img/use_bg.png) center/cover no-repeat;
-    clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 100%);
-    padding: 300px 0;
-    @include tablet {
-        position: relative;
-        top: -150px;
-        padding: 300px 0 350px;
-        clip-path: polygon(0% 25%, 100% 10%, 100% 75%, 0% 100%)
+    background: #e2d7d7;
+    padding: 50px 0 0 0;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -199px;
+        left: 0;
+        width: 100%;    
+        height: 200px;
+        background: #e2d7d7;
+        z-index: 1;
+        clip-path: polygon(0% 0%, 0 100%, 100% 0%);
+
+        @include mobile5s {
+            bottom: -99px;
+            height: 100px;
+        }
     }
 }
 .usefull-body {
@@ -945,7 +1167,8 @@ a {
     color: $main;
     max-width: 621px;
     width: 100%;
-    margin-bottom: 9.028vw;
+    margin-bottom: 5.028vw;
+    padding-top: 100px;
 
     @media (min-width:1441px) {
         font-size: 40px;
@@ -960,6 +1183,11 @@ a {
         font-size: 20px;
         align-self: flex-end;
     }
+    @include mobile5s {
+        font-size: 18px;
+        padding-top: 50px;
+        text-align: center;
+    }
     
 }
 .usefull__title span {
@@ -972,6 +1200,10 @@ a {
 .how-to {
     display: flex;
     justify-content: space-between;
+
+    @include tablet {
+        flex-direction: column;
+    }
 }
 .how-to__box {
     max-width: 370px;
@@ -979,12 +1211,18 @@ a {
     font-size: 14px;
     line-height: 24px;
     color: #101010;
+    @include tablet {
+        max-width: 100%;
+    }
 }
 .how-to__box:not(:last-child){
     margin-right: 20px;
+    @include tablet {
+        margin-right: 0;
+    }
 }
 .how-to__box:nth-child(1) {
-    @include mobile {
+    @include tablet {
         display: none;
     }
 }
@@ -1024,15 +1262,24 @@ a {
 }
 // steps
 .steps {
-    background: url(img/steps_bg.png) center / cover no-repeat;
-    clip-path: polygon(0 25%, 100% 0%, 100% 75%, 0% 95%);
-    padding: 300px 0 310px;
+    background: url(img/steps_bg.png) center  no-repeat, $main;
     position: relative;
-    margin-top: -427px;
-
-    @include tablet {
-        clip-path: polygon(0 20%, 100% 10%, 100% 80%, 0% 95%);
-        margin-top: -670px;
+    padding: 150px 0;
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background-color: $main;
+        clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+        @include mobile5s {
+            height: 100px;
+        }
+    }
+    @include mobile5s {
+        padding: 100px 0 50px;
     }
 }
 .steps-body {
@@ -1049,13 +1296,19 @@ a {
     margin-bottom: 120px;
 
     @include tablet {
-        margin-bottom: 10vw;
+        margin-bottom: 8vw;
+        font-size: 32px;
     }
-
     @include mobile {
-        max-width: 330px;
-        font-size: 20px;
+        max-width: 400px;
+        font-size: 3vw;
         align-self: flex-end;
+    }
+    @include mobile5s {
+        font-size: 16px;
+        max-width: 100%;
+        align-self: stretch;
+        text-align: center;
     }
 }
 .steps__title span {
@@ -1084,16 +1337,23 @@ a {
       margin-bottom: 6.667vw;
       align-items: center;
     }
+    @include mobile {
+        margin-bottom: 30px;
+    }
 }
 .step__icon {
     max-width: 4.444vw;
     margin-bottom: 50px;
 
+    @media (min-width: 1441px) {
+        max-width: 64px;
+    }
     @include tablet {
         margin-bottom: 3.472vw;
     }
-    @media (min-width: 1441px) {
-        max-width: 64px;
+    @include mobile {
+        min-width: 25px;
+        margin-bottom: 15px;
     }
 }
 .step__icon img {
@@ -1116,19 +1376,18 @@ a {
     @include tablet {
         text-align: center;
     }
+    @include mobile {
+        font-size: 1.333vw;
+    }
+    @include mobile5s {
+        font-size: 12px;
+    }
 }
 // Partners
 
 .partners {
-    clip-path: polygon(0 25%, 100% 0%, 100% 100%, 0% 100%);
+    position: relative;
     background-color: #191919;
-    padding: 300px 0 200px;
-    margin-top: -425px;
-
-    @include tablet {
-        padding: 18vw 0 12.667vw;
-        clip-path: polygon(0 20%, 100% 2%, 100% 100%, 0% 100%);
-    }
 }
 .partners-body  {
     display: flex;
@@ -1153,6 +1412,12 @@ a {
         font-size: 20px;
         line-height: 24px;
     }
+
+    @include mobile5s {
+        font-size: 19px;
+        max-width: 100%;
+        text-align: center;
+    }
 }
 .partners__title span {
     text-transform: uppercase;
@@ -1172,19 +1437,35 @@ a {
 .icon {
     max-width: 242px;
     width: 100%;
+    transition: all .3s linear;
     @include tablet {
         max-width: 20.167vw;
     }
+    @include mobile5s {
+        min-width: 20vw;
+    }
+}
+.icon:hover {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
+    transition: all .3s linear;
 }
 // FOOTER
 .footer {
     background-color: #191919;
     padding: 50px 0;
+
+    @include mobile5s {
+        padding: 20px 0;
+    }
 }
 .footer-body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mobile5s {
+        align-items: flex-start;
+    }
 }
 .contacts__item:hover {
     filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
@@ -1196,17 +1477,31 @@ a {
    font-size: 15px;
    line-height: 18px;
    flex: 0 0 auto;
+   margin-right: 20px;
+
+   @include mobile5s {
+       font-size: 12px;
+   }
 }
-.contacts._footer .contacts__title {
+.contacts._footer .contacts__title, .place__title {
     margin-bottom: 15px;
 }
-.contacts._footer .contacts__phone {
-    margin-bottom: 30px;
-}
-.contacts._footer .contacts__phone span {
+.contacts._footer .contacts__phone span, .place__adress span {
     display: block;
     margin-bottom: 5px;
 } 
+.contacts._footer .contacts__phone, .place__adress {
+    margin-bottom: 30px;
+    color: #E1DECE;
+}
+.contacts._footer .contacts__phone {
+    @include mobile5s {
+        margin-bottom: 12px;
+    }
+    @media (max-width:374px) {
+        margin-bottom: 40px;
+    }
+}
 .socials__title {
     margin-bottom: 15px;
 }
@@ -1214,21 +1509,43 @@ a {
     display: flex;
     align-items: center;
 }
+.contacts__item {
+    @include mobile5s {
+        max-width: 25px;
+    }
+}
+.contacts__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .contacts__item:not(:last-child) {
     margin-right: 15px;
+
+    @include mobile5s {
+        margin-right: 7px;
+    }
 }
-.contacts__adress {
-    color: #E1DECE;
-    margin-bottom: 30px;
+.place {
+    @include mobile5s {
+        font-size: 12px;
+    }
 }
-.contacts__mail {
-    color: #E1DECE;
+.place__mail-title {
+    margin-bottom: 20px;
+}
+.place__mail {
+    padding-bottom: 25px;
 }
 .footer__map img {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: cover;
+
+    @media (max-width:750px) {
+        display: none;
+    }
 }
 .footer__map {
     max-width: 39.653vw;

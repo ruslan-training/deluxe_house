@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head>  
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link  rel="stylesheet"  href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;700&family=Nunito+Sans:wght@400;700;900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
 
     <title>Deluxe House</title>
 </head>
@@ -43,7 +45,7 @@
             <li class="header__item">
               <a href="#" class="header__link">Контакты</a>
             </li>
-          </ul>
+          </ul> 
           <div class="header__contacts contacts">
             <a href="#" class="contacts__img-link">
               <div class="contacts__img">
@@ -61,7 +63,7 @@
             </a>  
             <div class="contacts__phone">
               8 (700) 300-03-40
-            </div>
+            </div>  
           </div>
           <div class="header__burger burger">
             <span></span>
@@ -98,6 +100,7 @@
         </ul>  
       </aside>  
       <div class="content">
+        <div id="bg" class="content__parallax-bg"></div>
         <div class="content__title">
           РОСКОШНЫЙ ДИЗАЙН <br>
           ИНТЕРЬЕРА В НУР-СУЛТАНЕ
@@ -115,8 +118,7 @@
           <img src="img/label__logo.svg" alt="">
         </div>
       </div>
-    </section>
-</div>
+  </div>
 <section class="projects">
   <div class="projects__abs-img _left">
     <img src="img/abs__label.svg" alt="">
@@ -298,7 +300,7 @@
       Лучшие решения, актуальный<br> дизайн, непревзойденное качество<Br> — все это о нашей студии
     </div>
   </div>
-</section>
+</section>  
 <section class="slider">
   <div class="container"> 
     <div class="slider-body">
@@ -320,7 +322,7 @@
               <div class="text-block__achivment">
                 <div class="vertical-text">Более</div>
                 <div class="achivment-number">10</div>
-                <div>лет<br>на рынке</div>
+                <div class="benefit">лет<br>на рынке</div>
               </div>
               <div class="text-block__achivment">
                 <div class="vertical-text">Более</div>
@@ -330,26 +332,16 @@
               <div class="text-block__achivment">
                 <div class="vertical-text">Более</div>
                 <div class="achivment-number">300</div>
-                <div>положительных<br>отзывов</div>
-              </div>
+                <div class="benefit">положительных<br>отзывов</div>
+              </div>  
             </div>
             <div class="slider-nav">
-              <div class="slider-nav__buttons">
-                <button class="slider-button prev">
-
-                </button>
-                <button class="slider-button next">
-
-                </button>
-              </div>
-              <div class="slider-nav__mission">
                 <div class="mission-text">
                   Мы создаем прекрасное!
                 </div> 
                 <div class="slider-nav__signature">
                   <img src="img/signature.svg" alt="">
                 </div>
-              </div>
             </div>
           </div>
         </div>
@@ -444,21 +436,21 @@
   <div class="container">
     <div class="collection-body">
       <div class="collection _left-box">
-        <div class="collection__images">
+        <a href="#" class="collection__images">
           <div class="collection__img">
             <img src="img/18.png" alt="">
           </div>
           <div class="collection__abs-img">
             <img src="img/18_small.png" alt="">
           </div>
-        </div>
+        </a>
         <div class="collection__text-box">
-          <div class="collection__category">
+          <a href="#" class="collection__category">
             Коллекция
-          </div>
-          <div class="collection__title">
+          </a>
+          <a href="#" class="collection__title">
             Экслюзивный<Br> Дизайн
-          </div>
+          </a>
           <div class="collection__text">
             Каждый проект дизайна интерьера разрабатывается нами индивидуально для каждого заказчика. Мы не повторяем свои проекты и стараемся каждый проект делать непохожими на другие.
             При разработке дизайна мы учитываем все пожелания своих клиентов и всегда рады предложить свежие идеи.
@@ -467,12 +459,12 @@
       </div>
       <div class="collection _right-box">
         <div class="collection__text-box">
-          <div class="collection__category">
+          <a href="#" class="collection__category">
             Коллекция
-          </div>
-          <div class="collection__title">
+          </q>
+          <a href="#" class="collection__title">
             Профессиональный<br> подход
-          </div>
+          </a>
           <div class="collection__text">
             В нашей команде работают дипломированные специалисты с большим опытом. Нами было реализовано большое количество объектов, поэтому для нас основной ценностью является ответственный подход к своей работе.
 Мы тщательно следим за тенденциями на рынке и всегда в курсе всех новинок.
@@ -498,26 +490,26 @@
           </div>
         </div>
         <div class="collection__text-box">
-          <div class="collection__category">
+          <a href="#" class="collection__category">
             Коллекция
-          </div>
-          <div class="collection__title">
+          </a>
+          <a href="#" class="collection__title">
             Внимательное<Br> исполнение
-          </div>
+            </a>
           <div class="collection__text">
             Команда опытных профессионалов хорошо знает, как провести авторский надзор, тщательно отслеживая каждый этап, м подобрать все необходимые материалы для того, что бы реализация объекта соответствовала проекту.
             А отличное знание рынка отделочных материалов, оборудования, мебели и декора помогут Вам сэкономить время, нервы, и пожалуй самое главное - Ваш бюджет!
           </div>
-        </div>
+        </div>  
       </div>
       <div class="collection _right-box">
         <div class="collection__text-box">
-          <div class="collection__category">
+          <a href="#" class="collection__category">
             Коллекция
-          </div>
-          <div class="collection__title">
+          </a>
+          <a href="#" class="collection__title">
             Точный<Br> расчет
-          </div>
+          </a>
           <div class="collection__text">
             В нашей команде работают дипломированные специалисты с большим опытом. Нами было реализовано большое количество объектов, поэтому для нас основной ценностью является ответственный подход к своей работе.
             Мы тщательно следим за тенденциями на рынке и всегда в курсе всех новинок.
@@ -740,17 +732,17 @@
           </ul>  
         </div>
       </div>
-      <div class="footer__contacts contacts _footer">
-        <div class="contacts__title">
+      <div class="footer__place place">
+        <div class="place__title">
           Наш адрес
         </div>
-        <div class="contacts__adress">
-          Республика Казахстан, 010000,<br> г. Нур-Султан, ул. Достык 13
+        <div class="place__adress">
+          <span>Республика Казахстан, 010000,</span><span>г. Нур-Султан, ул. Достык 13</span> 
         </div>
-        <div class="contacts__title">
+        <div class="place__mail-title">
           Написать на почту
         </div>
-        <div class="contacts__mail">
+        <div class="place__mail">
           dh.studio.kz@gmail.com
         </div>
       </div>
@@ -760,6 +752,8 @@
     </div>
   </div>
 </footer>
+
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="source/js/script.js"></script>    
 </body>
 </html>
