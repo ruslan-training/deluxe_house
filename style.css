@@ -1196,12 +1196,12 @@ a {
   }
 }
 
-.details__text:not(:last-child) p {
+.details__text p:not(:last-child) {
   display: block;
   margin-bottom: 40px;
 }
 @media (max-width: 600px) {
-  .details__text:not(:last-child) p {
+  .details__text p:not(:last-child) {
     margin-bottom: 15px;
   }
 }

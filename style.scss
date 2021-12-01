@@ -812,7 +812,7 @@ a {
         text-align: center;
     }
 }
-.details__text:not(:last-child) p {
+.details__text p:not(:last-child) {
     display: block;
     margin-bottom: 40px; 
 
