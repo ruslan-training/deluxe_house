@@ -1547,10 +1547,13 @@ a {
 .contacts._footer .contacts__title, .place__title {
     margin-bottom: 15px;
 }
-.contacts._footer .contacts__phone span, .place__adress span {
+.contacts._footer .contacts__phone a, .place__adress span {
     display: block;
     margin-bottom: 5px;
 } 
+.contacts._footer .contacts__phone a:hover {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
+}
 .contacts._footer .contacts__phone, .place__adress {
     margin-bottom: 30px;
     color: #E1DECE;
@@ -1597,6 +1600,9 @@ a {
 }
 .place__mail {
     padding-bottom: 25px;
+}
+.place__mail:hover {
+    filter: drop-shadow(0px 0px 4px rgba(255, 255, 255, 0.87));
 }
 .footer__map img {
     width: 100%;
